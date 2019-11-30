@@ -17,12 +17,18 @@ def Reader(file1, file2):
 			sequence[i][1]=p
 			i+=1
 
-Reader("sequence.txt", "probabilities.txt")
+#Reader("sequence.txt", "probabilities.txt")
+
+
 #Finder/Matcher
 #This should use the blast algorithm with a small addition
 #Basically it does the standard best fit search to find the most likely origin point for the query sequence, only now the confidence value also incorporates the probabilites
 #I.E. at each point, when comparing nucleotides from the query to the dictionary if the probability of the dictionary nucleotide being correct is low, then the confidence value from that index should also be low
 #E.G a matching that has lots of matches but very low probabilities for those matches will be less likely to be selected than a matching with fewer matches, but very high probabilites at those matches
 #This should also be true for the opposite case where there is a mismatch
+target = 'TGTTTGTTTATATCCTTTGGCTTGGAAAGTCCATCCCAGGGAATCTGGCCTACAGAAATAAATCC'
+def Matcher(target, wordSize):
+	chunks = [target[i:i+wordSize] for i in range(0, len(target), wordSize)]
+	#TODO: BLAST
 
- 
+Matcher(target, 7)
