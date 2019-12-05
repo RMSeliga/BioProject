@@ -198,3 +198,6 @@ def Matcher(target, wordSize):
 
 Matcher(target, 11)
 
+#M * N from comparing each chunk of query to each chunk of dictionary
+#N^2 from needleman wunsch
+#O(M*N^3)
